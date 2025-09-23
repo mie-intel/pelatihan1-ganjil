@@ -1,3 +1,16 @@
+import Link from "next/link";
+
+const CustomLink = ({ href, label }) => {
+  return (
+    <Link
+      href={href}
+      className="bg-[orange] hover:bg-[red] duration-300 relative w-[300px] h-[200px]"
+    >
+      {label}
+    </Link>
+  );
+};
+
 export default function Home() {
   return (
     // <div className="bg-[blue] p-4 !py-1 pt-8 px-10 pl-100 font-[800] text-[100px] text-[yellow]">
@@ -15,14 +28,31 @@ export default function Home() {
     //   <h1 className="text-[100px] max-md:hidden xl:hidden">EA</h1>
     //   <h1 className="text-[100px] max-xl:hidden">UWUW</h1>
     // </div>
-    <div className="w-full h-screen flex flex-col justify-evenly items-center lg:flex-row relative gap-2 bg-[pink]">
-      <div className="bg-[orange] relative w-[300px] h-[200px]" />
-      <div className="bg-[orange] relative w-[300px] h-[200px]" />
-      <div className="bg-[orange] relative w-[300px] h-[200px]" />
-      <div className="bg-[orange] relative w-[300px] h-[200px]" />
+    <div className="w-full text-lg h-screen flex flex-col justify-evenly items-center lg:flex-row relative gap-2 bg-[pink]">
+      <Link
+        href="https://google.com"
+        target="_blank"
+        className="bg-[orange] hover:bg-[red] duration-300 relative w-[300px] h-[200px]"
+      >
+        Google
+      </Link>
+      <CustomLink href="/day3" label="day 3" />
+      <Link
+        href="/day4"
+        className="bg-[orange] hover:bg-[red] duration-300 relative w-[300px] h-[200px]"
+      >
+        <button>day 4</button>
+      </Link>
+      <Link href="/day4" className="hover:text-[red] duration-300 relative">
+        day 4
+      </Link>
     </div>
   );
 }
+
+// export default function Home(){
+//   return <Home />
+// }
 /*
   x: kanan kiri
   r: kanan (right)
